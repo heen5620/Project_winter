@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-    <title>Do you want to buy computer?</title>
+  <title>Do you want to buy computer?</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-plot-listing.css">
-    <link rel="stylesheet" href="assets/css/animated.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-<!--
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-plot-listing.css">
+  <link rel="stylesheet" href="assets/css/animated.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <!--
 
 TemplateMo 564 Plot Listing
 
 https://templatemo.com/tm-564-plot-listing
 
 -->
-  </head>
+</head>
 
 <body>
 
@@ -60,11 +61,13 @@ https://templatemo.com/tm-564-plot-listing
               <li><a href="home.html">Home</a></li>
               <!--<li><a href="category.html">Category</a></li>-->
               <li><a href="listing.html">COMPUTER</a></li>
-              <li><a href="contact.html" class="active">Contact Us</a></li> 
-              <li><div class="main-white-button"><!--<a href="#"><i class="fa fa-plus"></i> Add Your Listing</a></div></li>--> 
-            </ul>        
+              <li><a href="contact.html" class="active">Contact Us</a></li>
+              <li>
+                <div class="main-white-button">
+                  <!--<a href="#"><i class="fa fa-plus"></i> Add Your Listing</a></div></li>-->
+            </ul>
             <a class='menu-trigger'>
-                <span>Menu</span>
+              <span>Menu</span>
             </a>
             <!-- ***** Menu End ***** -->
           </nav>
@@ -96,66 +99,78 @@ https://templatemo.com/tm-564-plot-listing
             <div class="row">
               <div class="col-lg-6">
                 <div id="map">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.3203991231503!2d126.92955333553171!3d35.14209493812617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35718d6edd641411%3A0xbda86fe2b5d5056f!2z7KGw7ISg64yA7ZWZ6rWQIElU7Jy17ZWp64yA7ZWZ!5e0!3m2!1sko!2skr!4v1672761937623!5m2!1sko!2skr" width="100%" height="650px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.3203991231503!2d126.92955333553171!3d35.14209493812617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35718d6edd641411%3A0xbda86fe2b5d5056f!2z7KGw7ISg64yA7ZWZ6rWQIElU7Jy17ZWp64yA7ZWZ!5e0!3m2!1sko!2skr!4v1672761937623!5m2!1sko!2skr"
+                    width="100%" height="650px" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
               </div>
               <div class="col-lg-6 align-self-center">
-                
-                  <div class="row">
+
+                <div class="row">
+
+                  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+                    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+                  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+                  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+                  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+                  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+
+                  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                    crossorigin="anonymous"></script>
+                  <script>
+
+                    var firebaseConfig = {
+                      apiKey: "AIzaSyC-6CjRjO-zkNVCFxJvZNc2XXXTtaKdJAg",
+                      authDomain: "apple-61d57.firebaseapp.com",
+                      projectId: "apple-61d57",
+                      storageBucket: 'gs://apple-61d57.appspot.com'
+                    };
+
+                    // Initialize Firebase
+                    firebase.initializeApp(firebaseConfig);
                     
-                      <div class="container mt-3">
-                        <input type="text" class="form-control mt-2" id="제목" placeholder="제목">
-                        <input type="text" class="form-control mt-2" id="e-mail" placeholder="e-mail">
-                        <textarea class="form-control mt-2" id="문의내용"placeholder="문의내용"></textarea>
-                        <input class="form-control mt-2" type="file" id="image">
-                        <button class="btn btn-danger mt-3" id="send">보내기</button>
-                    </div>
 
-                    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-                      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-
-                    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-                    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
-                    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
-                    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
-
-                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-                        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-                        crossorigin="anonymous"></script>
-                    <script>
-
-                        var firebaseConfig = {
-                            apiKey: "AIzaSyC-6CjRjO-zkNVCFxJvZNc2XXXTtaKdJAg",
-                            authDomain: "apple-61d57.firebaseapp.com",
-                            projectId: "apple-61d57",
-                        };
-
-                        // Initialize Firebase
-                        firebase.initializeApp(firebaseConfig);
-                    </script>
-
-                    <script>
-
-                      const db = firebase.firestore();
-
-                      $('#send').click(function(){
-                      var 저장할거 = { 
-                        제목 : $('#제목').val(),
-                        email : $('#e-mail').val(),
-                        내용 : $('#문의내용').val(),
-                        날짜 : new Date()
-                      }
-                      db.collection('message').add(저장할거).then(()=>{
-                          
-                        window.location.href = "home.html";
-                        }).catch((err)=>{
-                          console.log(err)
-                        })
-                      });
-                    
-                    </script>
+                  </script>
+                  <div class="container mt-3">
+                    <input type="text" class="form-control mt-2" id="제목" placeholder="제목">
+                    <input type="text" class="form-control mt-2" id="e-mail" placeholder="e-mail">
+                    <textarea class="form-control mt-2" id="문의내용" placeholder="문의내용"></textarea>
+                    <input class="form-control mt-2" type="file" id="image">
+                    <button class="btn btn-danger mt-3" id="send">보내기</button>
                   </div>
-               
+
+                  <script>
+                    
+                    const db = firebase.firestore();
+                    const storage = firebase.storage();
+
+                    $('#send').click(function () {
+                      
+                      const storage = firebase.storage(); 
+
+                      var file = document.querySelector('#image').files[0];
+                      var storageRef = storage.ref();
+                      var 저장할경로 = storageRef.child('image/' + file.name);
+                      var 업로드작업 = 저장할경로.put(file)
+
+                      var 저장할거 = {
+                        제목: $('#제목').val(),
+                        email: $('#e-mail').val(),
+                        내용: $('#문의내용').val(),
+                        날짜: new Date(),
+                      }
+                      db.collection('message').add(저장할거).then(() => {
+                      window.location.href = "home.html";
+                      }).catch((err) => {
+                        console.log(err)
+                      })
+                    });
+
+                  </script>
+                </div>
+
               </div>
             </div>
           </div>
@@ -164,7 +179,7 @@ https://templatemo.com/tm-564-plot-listing
     </div>
   </div>
 
-  
+
 
   <footer>
     <div class="container">
@@ -217,8 +232,9 @@ https://templatemo.com/tm-564-plot-listing
         <div class="col-lg-12">
           <div class="sub-footer">
             <p>Copyright © 2021 Plot Listing Co., Ltd. All Rights Reserved.
-            <br>
-			Design: <a rel="nofollow" href="https://templatemo.com" title="CSS Templates">TemplateMo</a></p>
+              <br>
+              Design: <a rel="nofollow" href="https://templatemo.com" title="CSS Templates">TemplateMo</a>
+            </p>
           </div>
         </div>
       </div>
