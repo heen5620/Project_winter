@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--outline: 1px dotted red;--><!--사진마다 도트선 보이게하는거
+  밑에 스타일 사이에 넣어야함-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible"
+    content="IE=edge " />
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0"  />
+    <title>CPU : INTEL</title>
+    <link rel="computersheet" href="computer.css">
+    <style>
+      ul li {list-style-type: none; float: left; margin-left: 20px;}
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <h1>Computer List</h1>
+      <select name="goUrl" onchange="window.open(this.value);">
+        <option>용도</option>
+        <option value="INTEL.html">INTEL</option>
+        <option value="AMD.html">AMD</option>
+      </select>
+      
+      <form id="search-form">
+        <input type="text" id="search">
+        <button id="searchBtn">search</button>
+      </form>
+      <ul id="list">
+        <!--<li>
+          <img src="./images/36.jpg" alt="">
+          <p>name</p>
+          <p>type</p>
+        </li>
+        <li>
+          <img src="./images/96.jpg" alt="">
+          <p>name</p>
+          <p>type</p>
+        </li>
+        <li>
+          <img src="./images/42.jpg" alt="">
+          <p>name</p>
+          <p>type</p>
+        </li>
+        <li>
+          <img src="./images/46.jpg" alt="">
+          <p>name</p>
+          <p>type</p>
+        </li>-->
+        <!-- 여기는 자바르스크립트에서 데이터를 추가-->
+      </ul>
+    </section>
+    <script src="./INTEL.js"></script>
+  </body>
+
+
+
+</html>

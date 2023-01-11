@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">computer!</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../../../home.html">HOME</a>
+          </li>
+          <li class="nav-COMPUTER">
+            <a class="nav-link" href="../../../listing.html">COMPUTER</a>
+          </li>
+          <li class="nav-item CONTACT">
+            <a class="nav-link CONTACT" href="../../../contact.html" >CONTACT</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+  </nav>
+  <div class="container mt-3">
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"></script>
+    <script>
+
+      var firebaseConfig = {
+        apiKey: "AIzaSyC-6CjRjO-zkNVCFxJvZNc2XXXTtaKdJAg",
+        authDomain: "apple-61d57.firebaseapp.com",
+        projectId: "apple-61d57",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script>
+
+      const db = firebase.firestore();
+      db.collection('product11').get().then((result) => {
+        result.forEach((doc) => {
+          console.log(doc.data())
+          var 템플릿 = `<div class="product11">
+            <div class="thumbnail" style="background-image: url('https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/2934449431/B.jpg?358000000')"></div>
+            <div class="flex-grow-1 p-4">
+              <h5 class="title">${doc.data().cpu}</h5>
+              <p class="date">${doc.data().main}</p>
+              <p class="date">${doc.data().ssd}</p>
+              <p class="date">${doc.data().ram}</p>
+              <p class="date">${doc.data().cooler}</p>
+              <p class="date">${doc.data().power}</p>
+              <p class="date">${doc.data().graphic}</p>
+              <p class="price">${doc.data().price}</p>
+            </div>
+          </div>
+        </div>`;
+          $('.container').append(템플릿)
+        })
+      })
+    </script>
+
+
+</body>
+
+</html>
