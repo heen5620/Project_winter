@@ -18,105 +18,12 @@
 
 
 
-    <style>
-        /* sign in FORM */
-        #logreg-forms {
-            width: 412px;
-            margin: 10vh auto;
-            background-color: #f3f3f3;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-        }
-
-        #logreg-forms form {
-            width: 100%;
-            max-width: 410px;
-            padding: 15px;
-            margin: auto;
-        }
-
-        #logreg-forms .form-control {
-            position: relative;
-            box-sizing: border-box;
-            height: auto;
-            padding: 10px;
-            font-size: 16px;
-        }
-
-        #logreg-forms .form-control:focus {
-            z-index: 2;
-        }
-
-        #logreg-forms .form-signin input[type="email"] {
-            margin-bottom: -1px;
-            border-bottom-right-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-
-        #logreg-forms .form-signin input[type="password"] {
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-        }
-
-        #logreg-forms .social-login {
-            width: 390px;
-            margin: 0 auto;
-            margin-bottom: 14px;
-        }
-
-        #logreg-forms .social-btn {
-            font-weight: 100;
-            color: white;
-            width: 190px;
-            font-size: 0.9rem;
-        }
-
-        #logreg-forms a {
-            display: block;
-            padding-top: 10px;
-            color: lightseagreen;
-        }
-
-        #logreg-form .lines {
-            width: 200px;
-            border: 1px solid red;
-        }
-
-        #logreg-forms button[type="submit"] {
-            margin-top: 10px;
-        }
-
-        #logreg-forms .facebook-btn {
-            background-color: #3C589C;
-        }
-
-        #logreg-forms .google-btn {
-            background-color: #DF4B3B;
-        }
-
-        #logreg-forms .form-reset,
-        #logreg-forms .form-signup {
-            display: none;
-        }
-
-        #logreg-forms .form-signup .social-btn {
-            width: 210px;
-        }
-
-        #logreg-forms .form-signup input {
-            margin-bottom: 2px;
-        }
-
-        .form-signup .social-login {
-            width: 210px !important;
-            margin: 0 auto;
-        }
-    </style>
+ 
 </head>
 
-<script src="https://accounts.google.com/gsi/client" async defer></script>
 
 </body>
+
 
 <body class="my-login-page">
     <section class="h-100">
@@ -160,13 +67,8 @@
                                     <button type="submit" class="btn btn-primary btn-block">
                                         Login
                                     </button>
-                                    <div id="g_id_onload" data-client_id="858850760903-3rps3husqa90cptl2g10os56b13pf970"
-                                        data-login_uri="https://localhost/path" >
-                                    </div>
-                                    <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline"
-                                        data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left">
-                                    </div>
-
+                                    <a class="social-button button--social-login button--google" id="googleLogin" href="#"><i class="social-icon fa fa-google"></i>Log in with Google</a>
+                                    
                                     <div class="mt-4 text-center">
                                         <a href="register.html">Create One</a>
                                     </div>
@@ -215,9 +117,48 @@
 
         // auth 설정
         const auth = getAuth();
-
-
-
+        
+        document.getElementById("googleLogin").addEventListener("click", () => {
+            signInWithPopup(auth, provider)
+              .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                // The signed-in user info.
+                const user = result.user;
+                console.log(result);
+                // ...
+              })
+              .catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.customData.email;
+                // The AuthCredential type that was used.
+                const credential = GoogleAuthProvider.credentialFromError(error);
+                console.log(error);
+                // ...
+              });
+          });
+          signInWithPopup(auth, provider)
+          .then((result) => {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            // The signed-in user info.
+            const user = result.user;
+            // ...
+          }).catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            const email = error.customData.email;
+            // The AuthCredential type that was used.
+            const credential = GoogleAuthProvider.credentialFromError(error);
+            // ...
+          });
 
 
     </script>
