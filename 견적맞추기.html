@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Do you want to buy computer?</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-plot-listing.css">
+    <link rel="stylesheet" href="assets/css/animated.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+<!--
+
+TemplateMo 564 Plot Listing
+
+https://templatemo.com/tm-564-plot-listing
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+           
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="index.html" class="active">Home</a></li>
+              <!--<li><a href="category.html">Category</a></li>-->
+              <li><a href="listing.html">COMPUTER</Canvas></a></li>
+              <li><a href="contact.html">Contact Us</a></li> 
+              <li><div class="main-white-button"><!--<a href="#"><i class="fa fa-plus"></i>Add Your Listing</a></div></li>-->
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="top-text header-text">
+            <h2>Best Choice</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+  <!-- cpu-mainboard combo_box Start-->
+  <h5 class="modal_subtit">Select details</h5>
+
+  <table class="table table-bordered no-padding text-sm">
+  
+      <tbody>
+          <tr class="cpu-mainboard">
+              <td>
+                  <select onchange="categoryChanges(this)" class="form-control" style="width:50%">
+                      <option value=''>==CPU==</option>
+                      <option value="a">AMD 라이젠5 PRO 4650G (르누아르) (멀티팩(정품))	132,900</option>
+                      <option value="b">AMD 라이젠5-4세대 5600G (세잔) (멀티팩(정품))	168,480</option>
+                      <option value="c">AMD 라이젠7-4세대 5700G (세잔) (멀티팩(정품))	329,400</option>
+                      <option value="d">인텔 코어i3-12세대 12100 (엘더레이크) (정품)	180,580</option>
+                      <option value="e">인텔 코어i3-12세대 12100F (엘더레이크) (정품)	128,520</option>
+                      <option value="f">인텔 코어i5-12세대 12400 (엘더레이크) (정품)	305,200</option>
+                      <option value="g">인텔 코어i5-12세대 12400F (엘더레이크) (정품)	218,490</option>
+                      <option value="h">인텔 코어i5-13세대 13400F (랩터레이크) (정품)	292,580</option>
+                      <option value="i">인텔 코어i5-11세대 11400F (로켓레이크S) (정품)	167,080</option>
+                  </select>
+  
+                  <select name="cals09" id="cals09" class="form-control" style="width:50%">
+                      <option value=''>==Main Board==</option>
+                  </select>
+  
+  <script>
+  function categoryChanges(e) {
+      var good_a = ["ASUS PRIME A320M-K 대원씨티에스	71,280"];
+      var good_b = ["BIOSTAR H610MH D4 이엠텍	98,280"];
+      var good_c = ["MSI H510M-A PRO	95,040"];
+      var target = document.getElementById("cals09");
+  
+      if(e.value == "a") var d = good_a;
+      else if(e.value == "b") var d = good_a;
+      else if(e.value == "c") var d = good_a;
+      else if(e.value == "d") var d = good_b;
+      else if(e.value == "e") var d = good_b;
+      else if(e.value == "f") var d = good_b;
+      else if(e.value == "g") var d = good_b;
+      else if(e.value == "h") var d = good_b;
+      else if(e.value == "i") var d = good_c;
+  
+      target.options.length = 0;
+  
+      for (x in d) {
+          var opt = document.createElement("option");
+          opt.value = d[x];
+          opt.innerHTML = d[x];
+          target.appendChild(opt);
+      }
+  }
+  </script>
+
+ <!-- gpu-power combo_box Start-->
+
+<table class="table">
+
+    <tbody>
+        <tr class="gpu-power">
+            <td>
+                <select onchange="categoryChange(this)" class="form-control" style="width:50%">
+                    <option value=''>==Graphic Card==</option>\
+                    <option value="j">없음</option>
+                    <option value="k">NVIDIA 지포스 GTX1060 3G 게이밍 그래픽카드(중고)	85,000 </option>
+                    <option value="l">MSI 지포스 GTX 1660 SUPER 벤투스 S OC D6 6GB	313,980</option>
+                    <option value="m">갤럭시 갤라즈 GALAX 지포스 RTX 3060 D6 8GB	440,000</option>
+                    <option value="n">ASUS DUAL 지포스 RTX 3060 O12G OC D6 12GB	467,630</option>
+                    <option value="o">MSI 지포스 RTX 3060 Ti 벤투스 2X OC V1 D6 8GB LHR	591,250</option>
+                    <option value="p">GIGABYTE 지포스 RTX 3070 Gaming OC V2 D6 8GB 제이씨현	801,360</option>
+                </select>
+
+                <select name="cals08" id="cals08" class="form-control" style="width:50%">
+                    <option value=''>==Power==</option>
+                </select>
+
+
+
+<script>
+function categoryChange(e) {
+    var good_d = ["COX SECURE SC-600N	41,040"];
+    var good_e = ["COX SECURE SC-700N	45,900"];
+    var target2 = document.getElementById("cals08");
+
+    if(e.value == "j") var d = good_d;
+    else if(e.value == "k") var d = good_e;
+    else if(e.value == "l") var d = good_e;
+    else if(e.value == "m") var d = good_e;
+    else if(e.value == "n") var d = good_e;
+    else if(e.value == "o") var d = good_e;
+    else if(e.value == "p") var d = good_e;
+
+
+    target2.options.length = 0;
+
+    for (y in d) {
+        var opt = document.createElement("option");
+        opt.value = d[y];
+        opt.innerHTML = d[y];
+        target2.appendChild(opt);
+    }
+}
+</script>
+
+<body>
+    <p class="total_price"></p>
+</body>
+
+<script>
+    function totalprice(){
+      var cpu_value = document.getElementById("cals08").value;
+      var cpu_price = 0;
+      if(cpu_value == "a")
+        cpu_price = 132900;
+
+      var totalprice = cpu_price;
+      document.getElementById("Total Price").value = totalprice;
+    
+    }
+</script>
+    
+<!--gpu-power combo_box End-->
+
+<!--cooler combo box start-->
+<form>
+  <select name="Cooler">
+    <option value="none">==Cooier==</option>
+    <option value="cooler_only">잘만 CNPS9X PERFORMA (BLACK)	28,670</option>
+  </select>
+</form>
+<!--cooler combo box end-->
+
+<!--ram combo box start-->
+<form>
+  <select name="Ram">
+    <option value="none">==Ram==</option>
+    <option value="office_under50">삼성전자 DDR4-3200 (8GB) 	26,790</option>
+    <option value="others">삼성전자 DDR4-3200 (8GB) X 2 	53,580</option>
+  </select>
+</form>
+<!--ram combo box end-->
+
+<!--ssd combo box start-->
+<form>
+  <select name="ssd">
+    <option value="none">==Ssd==</option>
+    <option value="256">마이크론 Crucial P2 M.2 NVMe 대원씨티에스 (1TB)	83,700</option>
+    <option value="512">삼성전자 980 M.2 NVMe (500GB)	65,340</option>
+    <option value="1tb">마이크론 Crucial MX500 대원씨티에스 (250GB)	42,310</option>
+  </select>
+</form>
+<!--cooler combo box end-->
+
+<!--case combo box start-->
+<form>
+  <select name="case">
+    <option value="none">==Case==</option>
+    <option value="case_only">앱코 NCORE 커넬 강화유리	31,830</option>
+  </select>
+</form>
+<!--cooler combo box end-->
+
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+
+ 
+
+
+  <!-- Scripts -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>
