@@ -21,19 +21,10 @@
   color: grey;
   font-size: 13px;
 }
-html, body {
-  height: 100%
-}
-
-#wrap {
-  min-height: 90%;
-  position: relative;
-  padding-bottom: 70px;
-}
-
 footer {
-  position: relative;
-  transform: translatY(-100%);
+  margin :50px;
+  border-top: 1px solid #eee;
+  padding-top: 80px;
 }
 
 footer h4 {
