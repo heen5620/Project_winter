@@ -17,47 +17,49 @@
         rel="stylesheet">
 
 
- 
+
 </head>
 
 <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav class="main-nav">
-            <!-- ***** Logo Start ***** -->
-           
-            <!-- ***** Logo End ***** -->
-            <!-- ***** Menu Start ***** -->
-            <ul class="nav">
-              <li><a href="home.html" class="active">Home</a></li>
-              <!--<li><a href="category.html">Category</a></li>-->
-              <li><a href="listing.html">COMPUTER</Canvas></a></li>
-              <li><a href="contact.html">Contact Us</a></li> 
-              <li><div class="main-white-button"><!--<a href="#"><i class="fa fa-plus"></i>Add Your Listing</a></div></li>-->
-            </ul>        
-            <a class='menu-trigger'>
-                <span>Menu</span>
-            </a>
-            <!-- ***** Menu End ***** -->
-          </nav>
+        <span class="dot"></span>
+        <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-      </div>
     </div>
-  </header>
+</div>
+<!-- ***** Preloader End ***** -->
+
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="home.html" class="active">Home</a></li>
+                        <!--<li><a href="category.html">Category</a></li>-->
+                        <li><a href="listing.html">COMPUTER</Canvas></a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li>
+                            <div class="main-white-button">
+                                <!--<a href="#"><i class="fa fa-plus"></i>Add Your Listing</a></div></li>-->
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
 
 
 <body class="my-login-page">
@@ -99,16 +101,19 @@
                                 </div>
 
                                 <div class="form-group m-0">
-                                    <button type="submit" class="btn btn-primary btn-block" onclick="alert('로그인이 되셨습니다!');"><a location.href='home.html'>
+                                    <button type="submit" class="btn btn-primary btn-block"
+                                        >
                                         Login
-                                    </a></button>
+                                    </button>
                                     <div class="mt-4 text-center">
                                         <a href="register.html">Create One</a>
                                     </div>
                                 </div>
                             </form>
                             <div class="tpa">
-                                <button type="button" class="social-button button--social-login button--google" id="googleLogin" href="#"><a href="#"><img src="assets/images/google.jpeg" height = "35px"></a>Log in with Google</a>
+                                <button type="button" class="social-button button--social-login button--google"
+                                    id="googleLogin" href="#"><a href="#"><img src="assets/images/google.jpeg"
+                                            height="35px"></a>Log in with Google</a>
                             </div>
                         </div>
                     </div>
@@ -151,19 +156,39 @@
 
         // auth 설정
         const auth = getAuth();
-        
+
         document.getElementById("googleLogin").addEventListener("click", () => {
             signInWithPopup(auth, provider)
-              .then((result) => {
+                .then((result) => {
+                    // This gives you a Google Access Token. You can use it to access the Google API.
+                    const credential = GoogleAuthProvider.credentialFromResult(result);
+                    const token = credential.accessToken;
+                    // The signed-in user info.
+                    const user = result.user;
+                    console.log(result);
+                    // ...
+                })
+                .catch((error) => {
+                    // Handle Errors here.
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // The email of the user's account used.
+                    const email = error.customData.email;
+                    // The AuthCredential type that was used.
+                    const credential = GoogleAuthProvider.credentialFromError(error);
+                    console.log(error);
+                    // ...
+                });
+        });
+        signInWithPopup(auth, provider)
+            .then((result) => {
                 // This gives you a Google Access Token. You can use it to access the Google API.
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 // The signed-in user info.
                 const user = result.user;
-                console.log(result);
                 // ...
-              })
-              .catch((error) => {
+            }).catch((error) => {
                 // Handle Errors here.
                 const errorCode = error.code;
                 const errorMessage = error.message;
@@ -171,28 +196,49 @@
                 const email = error.customData.email;
                 // The AuthCredential type that was used.
                 const credential = GoogleAuthProvider.credentialFromError(error);
-                console.log(error);
                 // ...
-              });
-          });
-          signInWithPopup(auth, provider)
-          .then((result) => {
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
-            // The signed-in user info.
-            const user = result.user;
-            // ...
-          }).catch((error) => {
-            // Handle Errors here.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // The email of the user's account used.
-            const email = error.customData.email;
-            // The AuthCredential type that was used.
-            const credential = GoogleAuthProvider.credentialFromError(error);
-            // ...
-          });
+            });
+
+        //제이쿼리를 사용한다.
+        $(document).ready(function () {
+
+            //가입버튼 눌렀을 때
+            $(document).on('click', '.login', function () {
+
+                //제이쿼리 선택자와 val() 함수를 이용해서 이메일,비밀번호 값을 가져온다. 
+                var email = $('#signInEmail').val();
+                var password = $('#signInPassword').val();
+                alert("로그인 버튼 눌렸음" + email + ":" + password);
+
+                //파이어베이스 이메일 로그인 함수
+                firebaseEmailAuth.signInWithEmailAndPassword(email, password)
+                    .then(function (firebaseUser) {
+
+                        //성공하면 firebaseUser에 유저 정보 값이 담겨 넘어온다.
+                        loginSuccess(firebaseUser);
+
+                    })
+                    .catch(function (error) {
+                        // 실패했을 때 에러 처리
+                        alert(error);
+                        alert("로그인 실패");
+                    });
+
+            });
+        });
+
+        //로그인 성공했을 때
+        function loginSuccess(firebaseUser) {
+            alert("로그인 성공");
+
+            //로그인 성공한 유저 id 확인해 보기 - firebase database에 접근해서 데이터 조회 하는 함수
+            firebaseDatabase.ref("users/" + firebaseUser.uid).once('value').then(function (snapshot) {
+                //alert(snapshot.val().name)
+            });
+
+            //메인 페이지로 이동
+            window.location.href = "home.html";
+        }
 
 
     </script>
@@ -212,7 +258,8 @@
     <script src="assets/js/custom.js"></script>
 
 
-
 </body>
+
+
 
 </html>
