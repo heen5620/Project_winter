@@ -27,7 +27,7 @@
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </div>  
     </div>
   </div>
   <!-- ***** Preloader End ***** -->
@@ -99,7 +99,7 @@
                                 </div>
 
                                 <div class="form-group m-0">
-                                    <button type="submit" id="signInButton" class="btn btn-primary btn-block">  
+                                    <button type="submit" class="btn btn-primary btn-block">
                                         Login
                                     </button>
                                     <div class="mt-4 text-center">
@@ -151,26 +151,6 @@
 
         // auth 설정
         const auth = getAuth();
-        document.getElementById('signInButton').addEventListener('click', (event) => {
-            event.preventDefault()
-            const signInEmail = document.getElementById('signInEmail').value
-            const signInPassword = document.getElementById('signInPassword').value
-            signInWithEmailAndPassword(auth, signInEmail, signInPassword)
-                .then((userCredential) => {
-                    // Signed in
-                    console.log(userCredential)
-                    const user = userCredential.user;
-                    alert("로그인 성공");
-                    location.href= 'home.html';
-                    // ...
-                })
-                .catch((error) => {
-                    console.log('로그인 실패')
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                });
-
-        })
         
         document.getElementById("googleLogin").addEventListener("click", () => {
             signInWithPopup(auth, provider)
@@ -181,8 +161,6 @@
                 // The signed-in user info.
                 const user = result.user;
                 console.log(result);
-                alert("구글 로그인 성공");
-                location.href= 'home.html';
                 // ...
               })
               .catch((error) => {
