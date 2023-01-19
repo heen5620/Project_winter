@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <title>Sign Up Page for Dull Nawa &mdash; Bootstrap 4 Login Page Snippet</title>
+    <title>LogIn Page for Dull Nawa &mdash; Dull Nawa</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="my-login.css">
@@ -27,7 +27,7 @@
         <span></span>
         <span></span>
         <span></span>
-      </div>  
+      </div>
     </div>
   </div>
   <!-- ***** Preloader End ***** -->
@@ -38,15 +38,12 @@
       <div class="row">
         <div class="col-12">
           <nav class="main-nav">
-            <!-- ***** Logo Start ***** -->
            
-            <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li><a href="home.html" class="active">Home</a></li>
-              <!--<li><a href="category.html">Category</a></li>-->
-              <li><a href="listing.html">COMPUTER</Canvas></a></li>
-              <li><a href="contact.html">Contact Us</a></li> 
+              <li><a href="listing.html"class="active">COMPUTER</Canvas></a></li>
+              <li><a href="contact.html"class="active">Contact Us</a></li> 
               <li><div class="main-white-button"><!--<a href="#"><i class="fa fa-plus"></i>Add Your Listing</a></div></li>-->
             </ul>        
             <a class='menu-trigger'>
@@ -99,7 +96,7 @@
                                 </div>
 
                                 <div class="form-group m-0">
-                                    <button type="submit" class="btn btn-primary btn-block">
+                                    <button type="submit" id="signInButton" class="btn btn-primary btn-block">  
                                         Login
                                     </button>
                                     <div class="mt-4 text-center">
@@ -151,6 +148,26 @@
 
         // auth 설정
         const auth = getAuth();
+        document.getElementById('signInButton').addEventListener('click', (event) => {
+            event.preventDefault()
+            const signInEmail = document.getElementById('signInEmail').value
+            const signInPassword = document.getElementById('signInPassword').value
+            signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+                .then((userCredential) => {
+                    // Signed in
+                    console.log(userCredential)
+                    const user = userCredential.user;
+                    alert("로그인 성공");
+                    location.href= 'home.html';
+                    // ...
+                })
+                .catch((error) => {
+                    console.log('로그인 실패')
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                });
+
+        })
         
         document.getElementById("googleLogin").addEventListener("click", () => {
             signInWithPopup(auth, provider)
@@ -161,6 +178,8 @@
                 // The signed-in user info.
                 const user = result.user;
                 console.log(result);
+                alert("구글 로그인 성공");
+                location.href= 'home.html';
                 // ...
               })
               .catch((error) => {
@@ -198,7 +217,7 @@
     </script>
 
     <div class="footer">
-        Copyright &copy; 2023 &mdash; Dull Nawa
+        Copyright &copy; 2023 &mdash; Dullnawa.Shop
     </div>
     </div>
     </div>
